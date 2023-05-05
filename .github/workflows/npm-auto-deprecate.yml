@@ -1,0 +1,25 @@
+name: NPM Auto Deprecate
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+jobs:
+  npm-auto-deprecate:
+    name: NPM Auto Deprecate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install node.js v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Deprecate versions
+        run: 'yarn npm-deprecate --name "*dev*" --package @conductr/core'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

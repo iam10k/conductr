@@ -1,0 +1,35 @@
+{
+  "name": "conductr",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conductr/conductr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/conductr/conductr/issues"
+  },
+  "keywords": [],
+  "author": "iam10k",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-angular": "^17.4.4",
+    "@favware/npm-deprecate": "^1.0.7",
+    "@swc/core": "^1.3.49",
+    "git-cliff": "^1.1.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "tsup": "^6.7.0",
+    "turbo": "^1.8.8"
+  }
+}
