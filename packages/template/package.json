@@ -49,7 +49,7 @@
   "devDependencies": {
     "@favware/cliff-jumper": "^2.0.0",
     "@types/jest": "29.5.0",
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.1.5",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
     "eslint": "^8.38.0",
