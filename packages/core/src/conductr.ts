@@ -1,7 +1,6 @@
 import { REST } from '@discordjs/rest';
 import {
   APIApplicationCommandAutocompleteInteraction,
-  APIApplicationCommandInteraction,
   APIChatInputApplicationCommandInteraction,
   APIContextMenuInteraction,
   APIInteraction,
@@ -157,7 +156,7 @@ export interface ConductrEvents {
   debug: (message: string) => void;
   error: (err: Error) => void;
   rawInteraction: (interaction: APIInteraction) => void;
-  commandInteraction: (interaction: APIApplicationCommandInteraction, command: SlashCommand) => void;
+  commandInteraction: (interaction: APIChatInputApplicationCommandInteraction, command: SlashCommand) => void;
   commandAutocompleteInteraction: (interaction: APIApplicationCommandAutocompleteInteraction, command: SlashCommand) => void;
   contextMenuInteraction: (interaction: APIContextMenuInteraction, contextMenu: ContextMenu) => void;
   componentInteraction: (interaction: APIMessageComponentInteraction, component: MessageComponent) => void;

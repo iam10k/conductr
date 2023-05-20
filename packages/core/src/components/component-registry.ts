@@ -1,7 +1,7 @@
-import { APIMessageComponentInteraction, ComponentType, Snowflake } from 'discord-api-types/v10';
+import { APIMessageComponentInteraction, APIModalSubmitInteraction, ComponentType, Snowflake } from 'discord-api-types/v10';
 import { Conductr } from '../conductr';
 import { Component } from './component';
-import { APIModalSubmitInteraction } from 'discord-api-types/payloads/v10/_interactions/modalSubmit';
+import { ModalSubmitInteraction } from '../interactions';
 
 interface ComponentMap {
   /**
@@ -124,7 +124,7 @@ export class ComponentRegistry {
     this.conductr.emit('modalInteraction', interaction, component);
 
     const handler = component.getHandler();
-    return handler(interaction);
+    return handler(interaction, new ModalSubmitInteraction(interaction));
   }
 
   async processMessageComponent(interaction: APIMessageComponentInteraction): Promise<void> {

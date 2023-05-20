@@ -4,6 +4,7 @@ import {
   APIChatInputApplicationCommandInteraction,
   APIContextMenuInteraction,
   ApplicationCommandType,
+  RESTPostAPIApplicationCommandsJSONBody,
   Routes,
   Snowflake
 } from 'discord-api-types/v10';
@@ -12,7 +13,6 @@ import { AutocompleteInteraction, ContextMenuInteraction, SlashInteraction } fro
 import { getCommandNames } from '../util';
 import { ApplicationCommand } from './application-command';
 import { SlashCommand, SlashHandlers } from './slash-commands';
-import { RESTPostAPIApplicationCommandsJSONBody } from 'discord-api-types/rest/v10/interactions';
 import equal from 'deep-equal';
 import { REST } from '@discordjs/rest';
 
@@ -101,7 +101,7 @@ export class CommandRegistry {
     }
 
     if (!options.skipGuilds) {
-      for (const [guildId] of this.guildCommands.keys()) {
+      for (const guildId of this.guildCommands.keys()) {
         if (Array.isArray(options.skipGuilds) && options.skipGuilds.includes(guildId)) {
           continue;
         }
@@ -181,7 +181,12 @@ export class CommandRegistry {
     }
 
     if (!equal(updatePayload, applicationCommands, { strict: true })) {
-      await this.rest.put(Routes.applicationCommands(options.applicationId), { body: updatePayload });
+      await this.rest.put(
+        options.guildId
+          ? Routes.applicationGuildCommands(options.applicationId, options.guildId)
+          : Routes.applicationCommands(options.applicationId),
+        { body: updatePayload }
+      );
       this.conductr.emit('debug', `Updated ${debugMessage} commands`);
     } else {
       this.conductr.emit('debug', `No changes to ${debugMessage} commands`);

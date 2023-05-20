@@ -23,7 +23,7 @@ export class SlashCommand extends Mixin(Guilds) implements ApplicationCommand<RE
   }
 
   get type(): ApplicationCommandType {
-    return this._json.type;
+    return this._json.type ?? ApplicationCommandType.ChatInput;
   }
 
   get commandKey(): string {

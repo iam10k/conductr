@@ -4,3 +4,4 @@ export * from './application-commands';
 export * from './components';
 export * from './interactions';
 export * from './receivers';
+export { getCommandNames } from './util';

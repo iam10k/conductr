@@ -11,7 +11,7 @@ export class Modal extends Mixin(Guilds, CustomId) implements Component<ModalHan
   constructor(customId: string | RegExp, private readonly _handler: ModalHandler, guilds: Snowflake[] | undefined) {
     super();
     Reflect.set(this, '_customId', customId);
-    Reflect.set(this, '_componentType', 'M');
+    Reflect.set(this, '_componentTypePrefix', 'M');
     Reflect.set(this, '_guilds', guilds);
   }
 
