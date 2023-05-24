@@ -1,8 +1,17 @@
 import { APIModalSubmitInteraction, ModalSubmitActionRowComponent, ModalSubmitComponent } from 'discord-api-types/v10';
 
 export interface ModalSubmitResolvers {
+  /**
+   * Gets all the fields mapped to custom id
+   */
   getFields(): Map<string, ModalSubmitComponent>;
 
+  /**
+   * Gets a field given a custom id from a component
+   * @param {string} customId The custom id of the component
+   * @param {boolean} [getFull=true] Whether to get the full option object
+   * @returns {ModalSubmitComponent|string}
+   */
   getField(customId: string, getFull?: true): ModalSubmitComponent;
 
   getField(customId: string, getFull: false): string;
