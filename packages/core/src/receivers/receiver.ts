@@ -4,8 +4,6 @@ import { APIInteraction } from 'discord-api-types/v10';
  * The Receiver interface for Conductr to use.
  */
 export class Receiver {
-  constructor() {}
-
   isGeneric(): this is ReceiverGeneric {
     return true;
   }

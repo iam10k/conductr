@@ -5,13 +5,12 @@ import { SlashCommandAutocompleteHandler, SlashCommandHandler, SlashHandlers } f
 import { SlashSubcommandCreator, SlashSubcommandGroupCreator } from './slash-subcommand-creator';
 import { SlashCommand } from './slash-command';
 
-interface SlashCommandSubcommandsOnlyCreator
-  extends Omit<
-    SlashCommandCreator,
-    Exclude<keyof SharedSlashCommandOptions, 'options'> | 'handleInteraction' | 'handleAutocompleteInteraction'
-  > {}
+type SlashCommandSubcommandsOnlyCreator = Omit<
+  SlashCommandCreator,
+  Exclude<keyof SharedSlashCommandOptions, 'options'> | 'handleInteraction' | 'handleAutocompleteInteraction'
+>;
 
-interface SlashCommandOnlyCreator extends Omit<SlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'> {}
+type SlashCommandOnlyCreator = Omit<SlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'>;
 
 export interface SlashCommandCreator extends SlashCommandBuilder, ForGuilds {}
 

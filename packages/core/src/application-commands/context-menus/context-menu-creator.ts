@@ -3,10 +3,10 @@ import { APIContextMenuInteraction } from 'discord-api-types/v10';
 import { mix } from 'ts-mixer';
 import { ContextMenuResolvers } from '../../interactions';
 import { ForGuilds } from '../../mixins';
-import { ContextMenuHandler } from './context-menu-handler';
-import { MessageContextMenuCreator, UserContextMenuCreator } from './context-menu-types';
 import { ContextMenu } from './context-menu';
+import { ContextMenuHandler } from './context-menu-handler';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface ContextMenuCreator<IType extends APIContextMenuInteraction, Resolved extends ContextMenuResolvers>
   extends ContextMenuCommandBuilder,
     ForGuilds {}
