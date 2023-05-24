@@ -4,7 +4,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo run build",
+    "build:affected": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test --parallel",
+    "test:cov": "turbo run test:cov --parallel",
+    "test:packages:cov": "jest --coverage",
+    "lint": "turbo run lint --parallel",
+    "lint:fix": "turbo run lint:fix --parallel",
+    "lint:fix:affected": "turbo run format --filter='...[origin/main]' --parallel",
+    "format:check": "turbo run format:check --parallel",
+    "format": "turbo run format --parallel",
+    "format:affected": "turbo run format --filter='...[origin/main]' --parallel",
+    "publish-packages": "turbo run release --concurrency=1",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,15 +34,15 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^17.5.1",
-    "@commitlint/config-angular": "^17.4.4",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-angular": "^17.6.3",
     "@favware/npm-deprecate": "^1.0.7",
-    "@swc/core": "^1.3.49",
-    "git-cliff": "^1.1.2",
+    "@swc/core": "^1.3.59",
+    "git-cliff": "^1.2.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.1",
-    "prettier": "^2.8.7",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
     "tsup": "^6.7.0",
-    "turbo": "^1.8.8"
+    "turbo": "^1.9.9"
   }
 }
