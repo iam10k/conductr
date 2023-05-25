@@ -43,8 +43,8 @@
   "devDependencies": {
     "@favware/cliff-jumper": "^2.0.0",
     "@types/deep-equal": "^1.0.1",
-    "@types/jest": "29.5.0",
-    "@types/node": "^18.16.14",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.15",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
     "eslint": "^8.41.0",
@@ -54,7 +54,7 @@
     "prettier": "^2.8.8",
     "ts-jest": "^29.1.0",
     "tsup": "^6.7.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "@discordjs/builders": "^1.6.3",
