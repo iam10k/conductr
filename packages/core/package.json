@@ -6,10 +6,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conductr/conductr.git"
+    "url": "git+https://github.com/iam10k/conductr.git"
   },
   "bugs": {
-    "url": "https://github.com/conductr/conductr/issues"
+    "url": "https://github.com/iam10k/conductr/issues"
   },
   "keywords": [
     "discord",
