@@ -50,7 +50,7 @@ jobs:
 
       - name: Publish package
         run: |
-          pnpm workspace ${{ matrix.package }} release --preid "dev.$(date +%s)-$(git rev-parse --short HEAD)"
-          pnpm workspace ${{ matrix.package }} npm publish --tag dev || true
+          pnpm -F ${{ matrix.package }} release --preid "dev.$(date +%s)-$(git rev-parse --short HEAD)"
+          pnpm -F ${{ matrix.package }} npm publish --tag dev || true
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
