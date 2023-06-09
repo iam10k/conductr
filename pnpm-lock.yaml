@@ -8,8 +8,8 @@ importers:
         specifier: ^17.6.5
         version: 17.6.5(@swc/core@1.3.60)
       '@commitlint/config-angular':
-        specifier: ^17.6.3
-        version: 17.6.3
+        specifier: ^17.6.5
+        version: 17.6.5
       '@favware/npm-deprecate':
         specifier: ^1.0.7
         version: 1.0.7
@@ -470,8 +470,8 @@ packages:
     engines: {node: '>=v14'}
     dev: true
 
-  /@commitlint/config-angular@17.6.3:
-    resolution: {integrity: sha512-o19aXW5hD0r2F+IlLEhFEta/xH7t1TgAQy+QzuSJW8l9ai7fplwXhNa+HZP6+Qx2cqnsBz+p9o9211J2yUeqZg==}
+  /@commitlint/config-angular@17.6.5:
+    resolution: {integrity: sha512-gvaQffNH/PDmolUc/Z334IciNBopEUqTxvtOaT6nSEzol8uFOE5plonUSCK9+cdESWcEIT5lspwDQdz4aTBGLA==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-angular-type-enum': 17.4.0
