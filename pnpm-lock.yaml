@@ -60,8 +60,8 @@ importers:
         version: 6.0.3
     devDependencies:
       '@favware/cliff-jumper':
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.1.1
+        version: 2.1.1
       '@types/deep-equal':
         specifier: ^1.0.1
         version: 1.0.1
@@ -904,8 +904,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@favware/cliff-jumper@2.1.0:
-    resolution: {integrity: sha512-7bzJ7ox2aQEBmjxibNzSZLH6UiXAe3dpmc6P96CiPYaJXszalVMGgn5bGKe5RZWeLw9wAx329eL67xphR0QK5g==}
+  /@favware/cliff-jumper@2.1.1:
+    resolution: {integrity: sha512-3VFXJMkSiMMtYccvtBEee3mK5tk5XCnQQqwMtTFCzuYCG01xE0rWvN4tUO9gZwph+vtn03/gTpO7yHVK+uWhSQ==}
     engines: {node: '>=v16'}
     hasBin: true
     dependencies:
