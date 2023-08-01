@@ -34,7 +34,10 @@ export class CommandRegistry {
    */
   private readonly guildCommands: Map<string, Map<string, ApplicationCommand>> = new Map();
 
-  constructor(private readonly conductr: Conductr, private readonly rest?: REST) {}
+  constructor(
+    private readonly conductr: Conductr,
+    private readonly rest?: REST
+  ) {}
 
   registerCommand(applicationCommand: ApplicationCommand): void {
     if (applicationCommand.guilds) {

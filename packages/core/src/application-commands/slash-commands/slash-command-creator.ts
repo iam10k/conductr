@@ -1,9 +1,9 @@
 import { SharedSlashCommandOptions, SlashCommandAssertions, SlashCommandBuilder } from '@discordjs/builders';
-import { mix } from 'ts-mixer';
 import { ForGuilds } from '../../mixins';
 import { SlashCommandAutocompleteHandler, SlashCommandHandler, SlashHandlers } from './slash-handler';
 import { SlashSubcommandCreator, SlashSubcommandGroupCreator } from './slash-subcommand-creator';
 import { SlashCommand } from './slash-command';
+import { Mixin } from 'ts-mixer';
 
 type SlashCommandSubcommandsOnlyCreator = Omit<
   SlashCommandCreator,
@@ -12,13 +12,10 @@ type SlashCommandSubcommandsOnlyCreator = Omit<
 
 type SlashCommandOnlyCreator = Omit<SlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'>;
 
-export interface SlashCommandCreator extends SlashCommandBuilder, ForGuilds {}
-
 /**
  * Creator for Slash Commands
  */
-@mix(ForGuilds)
-export class SlashCommandCreator extends SlashCommandBuilder {
+export class SlashCommandCreator extends Mixin(SlashCommandBuilder, ForGuilds) implements ForGuilds {
   /**
    * Map of groups to subcommands and HandlerFunctions or just subcommands to HandlerFunctions
    * @private

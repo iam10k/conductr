@@ -8,7 +8,11 @@ import { ModalHandler } from './modal-handler';
  * @private
  */
 export class Modal extends Mixin(Guilds, CustomId) implements Component<ModalHandler> {
-  constructor(customId: string | RegExp, private readonly _handler: ModalHandler, guilds: Snowflake[] | undefined) {
+  constructor(
+    customId: string | RegExp,
+    private readonly _handler: ModalHandler,
+    guilds: Snowflake[] | undefined
+  ) {
     super();
     Reflect.set(this, '_customId', customId);
     Reflect.set(this, '_componentTypePrefix', 'M');

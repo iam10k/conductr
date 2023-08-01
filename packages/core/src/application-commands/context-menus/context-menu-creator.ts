@@ -1,25 +1,19 @@
 import { ContextMenuCommandBuilder, ContextMenuCommandType } from '@discordjs/builders';
 import { APIContextMenuInteraction } from 'discord-api-types/v10';
-import { mix } from 'ts-mixer';
+import { Mixin } from 'ts-mixer';
 import { ContextMenuResolvers } from '../../interactions';
 import { ForGuilds } from '../../mixins';
 import { ContextMenu } from './context-menu';
 import { ContextMenuHandler } from './context-menu-handler';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export interface ContextMenuCreator<IType extends APIContextMenuInteraction, Resolved extends ContextMenuResolvers>
-  extends ContextMenuCommandBuilder,
-    ForGuilds {}
-
 /**
  * Creator for Context Menus
  * Prefer using specific creators like {@link UserContextMenuCreator} or {@link MessageContextMenuCreator} for type safety.
  */
-@mix(ForGuilds)
-export class ContextMenuCreator<
-  IType extends APIContextMenuInteraction,
-  Resolved extends ContextMenuResolvers
-> extends ContextMenuCommandBuilder {
+export class ContextMenuCreator<IType extends APIContextMenuInteraction, Resolved extends ContextMenuResolvers>
+  extends Mixin(ContextMenuCommandBuilder, ForGuilds)
+  implements ForGuilds
+{
   /**
    * Handler for the context menu
    * @private
