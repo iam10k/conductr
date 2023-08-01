@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.2.0](https://github.com/conductr/conductr/compare/@conductr/core@1.1.0...@conductr/core@1.2.0) - (2023-08-01)
+
+## Bug Fixes
+
+- Resolve lint issues ([89fdbc0](https://github.com/conductr/conductr/commit/89fdbc025de53a3d982e748d00c7654b9c42ed16))
+- Workflows fix ([1e88b12](https://github.com/conductr/conductr/commit/1e88b129f45c703c93b12df91e5af4be62a19c0b))
+
+## Features
+
+- Update dependencies ([1ca162b](https://github.com/conductr/conductr/commit/1ca162bfe75a1378d6b8e1717cbc78d54091138f))
+
+# Changelog
+All notable changes to this project will be documented in this file.
+
 # [@conductr/core@1.1.0](https://github.com/conductr/conductr/tree/@conductr/core@1.1.0) - (2023-05-25)
 
 ## Bug Fixes
