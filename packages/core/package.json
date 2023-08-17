@@ -60,7 +60,7 @@
     "@discordjs/builders": "^1.6.4",
     "@discordjs/rest": "^2.0.0",
     "deep-equal": "^2.2.2",
-    "discord-api-types": "^0.37.51",
+    "discord-api-types": "^0.37.54",
     "eventemitter3": "^5.0.1",
     "reflect-metadata": "^0.1.13",
     "ts-mixer": "^6.0.3"
