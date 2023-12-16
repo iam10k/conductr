@@ -47,17 +47,17 @@
     "release": "cliff-jumper"
   },
   "devDependencies": {
-    "@favware/cliff-jumper": "^2.1.1",
+    "@favware/cliff-jumper": "^2.2.3",
     "@types/jest": "29.5.2",
-    "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.60.0",
-    "eslint": "^8.43.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^29.5.0",
-    "reflect-metadata": "^0.1.13",
-    "typescript": "^4.9.5"
+    "@types/node": "^18.19.3",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.7.0",
+    "reflect-metadata": "^0.1.14",
+    "typescript": "^5.3.3"
   },
   "jest": {
     "moduleFileExtensions": [
