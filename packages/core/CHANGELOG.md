@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.3.0](https://github.com/conductr/conductr/compare/@conductr/core@1.3.0...@conductr/core@1.3.0) - (2023-12-16)
+
+## Features
+
+- Bump dependency versions ([2d0b36d](https://github.com/conductr/conductr/commit/2d0b36d2a17af8b18389ea8f069ed7f8219a1ab4))
+
 # [@conductr/core@1.2.0](https://github.com/conductr/conductr/compare/@conductr/core@1.1.0...@conductr/core@1.2.0) - (2023-08-01)
 
 ## Bug Fixes
