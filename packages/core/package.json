@@ -62,7 +62,7 @@
     "deep-equal": "^2.2.3",
     "discord-api-types": "^0.37.66",
     "eventemitter3": "^5.0.1",
-    "reflect-metadata": "^0.1.14",
+    "reflect-metadata": "^0.2.1",
     "ts-mixer": "^6.0.3"
   },
   "jest": {
