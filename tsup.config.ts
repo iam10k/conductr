@@ -9,8 +9,7 @@ export const baseTsupConfig = {
   skipNodeModulesBundle: true,
   clean: true,
   minify: false,
-  keepNames: true,
-  dts: true
+  keepNames: true
 };
 
 export default defineConfig(baseTsupConfig);

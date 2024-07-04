@@ -1,21 +1,65 @@
-import { SharedSlashCommandOptions, SlashCommandAssertions, SlashCommandBuilder } from '@discordjs/builders';
+import {
+  SharedNameAndDescription,
+  SharedSlashCommand,
+  SharedSlashCommandOptions,
+  SharedSlashCommandSubcommands,
+  SlashCommandAssertions
+} from '@discordjs/builders';
 import { ForGuilds } from '../../mixins';
 import { SlashCommandAutocompleteHandler, SlashCommandHandler, SlashHandlers } from './slash-handler';
 import { SlashSubcommandCreator, SlashSubcommandGroupCreator } from './slash-subcommand-creator';
 import { SlashCommand } from './slash-command';
 import { Mixin } from 'ts-mixer';
 
-type SlashCommandSubcommandsOnlyCreator = Omit<
-  SlashCommandCreator,
-  Exclude<keyof SharedSlashCommandOptions, 'options'> | 'handleInteraction' | 'handleAutocompleteInteraction'
->;
+interface SharedSlashCommandCreator {
+  handleInteraction(handler: SlashCommandHandler): SlashCommandOptionsOnlyBuilder;
 
-type SlashCommandOnlyCreator = Omit<SlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'>;
+  handleAutocompleteInteraction(handler: SlashCommandAutocompleteHandler): SlashCommandOptionsOnlyBuilder;
+
+  addSubcommand(
+    input: SlashSubcommandCreator | ((subcommandGroup: SlashSubcommandCreator) => SlashSubcommandCreator)
+  ): SlashCommandSubcommandsOnlyCreator;
+
+  addSubcommandGroup(
+    input: SlashSubcommandGroupCreator | ((subcommandGroup: SlashSubcommandGroupCreator) => SlashSubcommandGroupCreator)
+  ): SlashCommandSubcommandsOnlyCreator;
+
+  create(): SlashCommand;
+}
+
+/**
+ * An interface specifically for slash command subcommands.
+ */
+export interface SlashCommandSubcommandsOnlyCreator
+  extends SharedNameAndDescription,
+    SharedSlashCommand,
+    Omit<SharedSlashCommandCreator, 'handleInteraction' | 'handleAutocompleteInteraction'>,
+    ForGuilds,
+    Omit<SharedSlashCommandSubcommands<SlashCommandSubcommandsOnlyCreator>, 'addSubcommand' | 'addSubcommandGroup'> {}
+
+/**
+ * An interface specifically for slash command options.
+ */
+export interface SlashCommandOptionsOnlyBuilder
+  extends SharedNameAndDescription,
+    SharedSlashCommand,
+    Omit<SharedSlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'>,
+    ForGuilds,
+    Omit<SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder>, 'handleInteraction' | 'handleAutocompleteInteraction'> {}
 
 /**
  * Creator for Slash Commands
  */
-export class SlashCommandCreator extends Mixin(SlashCommandBuilder, ForGuilds) implements ForGuilds {
+export class SlashCommandCreator
+  extends Mixin(
+    SharedNameAndDescription,
+    SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder>,
+    SharedSlashCommandSubcommands<SlashCommandSubcommandsOnlyCreator>,
+    SharedSlashCommand,
+    ForGuilds
+  )
+  implements ForGuilds
+{
   /**
    * Map of groups to subcommands and HandlerFunctions or just subcommands to HandlerFunctions
    * @private
@@ -35,7 +79,7 @@ export class SlashCommandCreator extends Mixin(SlashCommandBuilder, ForGuilds) i
    * Sets the handler called when the command is used.
    * @param handler
    */
-  handleInteraction(handler: SlashCommandHandler): SlashCommandOnlyCreator {
+  handleInteraction(handler: SlashCommandHandler): SlashCommandOptionsOnlyBuilder {
     if (this.subHandlers.size > 0) {
       throw new Error('Cannot use handleInteraction() when using subcommands or subcommand groups');
     }
@@ -50,7 +94,7 @@ export class SlashCommandCreator extends Mixin(SlashCommandBuilder, ForGuilds) i
    * Sets the handler called when the command autocomplete is requested.
    * @param handler
    */
-  handleAutocompleteInteraction(handler: SlashCommandAutocompleteHandler): SlashCommandOnlyCreator {
+  handleAutocompleteInteraction(handler: SlashCommandAutocompleteHandler): SlashCommandOptionsOnlyBuilder {
     if (this.subHandlers.size > 0) {
       throw new Error('Cannot use handleAutocompleteInteraction() when using subcommands or subcommand groups');
     }
