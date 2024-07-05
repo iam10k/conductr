@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.3.2](https://github.com/conductr/conductr/compare/@conductr/core@1.3.2...@conductr/core@1.3.2) - (2024-07-05)
+
+## Bug Fixes
+
+- Add back in dts ([d5ab3a5](https://github.com/conductr/conductr/commit/d5ab3a5e54170da6ec412f0829720d6292ff6a78))
+
 # [@conductr/core@1.3.1](https://github.com/conductr/conductr/compare/@conductr/core@1.3.1...@conductr/core@1.3.1) - (2024-07-05)
 
 ## Bug Fixes
