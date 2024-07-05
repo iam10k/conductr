@@ -60,10 +60,12 @@
     "@discordjs/builders": "^1.8.2",
     "@discordjs/rest": "^2.3.0",
     "deep-equal": "^2.2.3",
-    "discord-api-types": "^0.37.90",
     "eventemitter3": "^5.0.1",
     "reflect-metadata": "^0.2.2",
     "ts-mixer": "^6.0.4"
+  },
+  "peerDependencies": {
+    "discord-api-types": "^0.37.83"
   },
   "jest": {
     "moduleFileExtensions": [

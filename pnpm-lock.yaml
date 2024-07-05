@@ -50,7 +50,7 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       discord-api-types:
-        specifier: ^0.37.90
+        specifier: ^0.37.83
         version: 0.37.92
       eventemitter3:
         specifier: ^5.0.1
