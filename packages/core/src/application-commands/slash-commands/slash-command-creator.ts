@@ -2,12 +2,18 @@ import {
   SharedNameAndDescription,
   SharedSlashCommand,
   SharedSlashCommandOptions,
-  SharedSlashCommandSubcommands,
-  SlashCommandAssertions
+  SlashCommandAssertions,
+  SlashCommandSubcommandBuilder,
+  SlashCommandSubcommandGroupBuilder
 } from '@discordjs/builders';
 import { ForGuilds } from '../../mixins';
 import { SlashCommandAutocompleteHandler, SlashCommandHandler, SlashHandlers } from './slash-handler';
-import { SlashSubcommandCreator, SlashSubcommandGroupCreator } from './slash-subcommand-creator';
+import {
+  SlashCommandSubcommandCreatorInterface,
+  SlashSubcommandCreator,
+  SlashSubcommandGroupCreator,
+  SlashSubcommandGroupCreatorInterface
+} from './slash-subcommand-creator';
 import { SlashCommand } from './slash-command';
 import { Mixin } from 'ts-mixer';
 
@@ -17,11 +23,15 @@ interface SharedSlashCommandCreator {
   handleAutocompleteInteraction(handler: SlashCommandAutocompleteHandler): SlashCommandOptionsOnlyBuilder;
 
   addSubcommand(
-    input: SlashSubcommandCreator | ((subcommandGroup: SlashSubcommandCreator) => SlashSubcommandCreator)
+    input:
+      | SlashCommandSubcommandCreatorInterface
+      | ((subcommandGroup: SlashCommandSubcommandCreatorInterface) => SlashCommandSubcommandCreatorInterface)
   ): SlashCommandSubcommandsOnlyCreator;
 
   addSubcommandGroup(
-    input: SlashSubcommandGroupCreator | ((subcommandGroup: SlashSubcommandGroupCreator) => SlashSubcommandGroupCreator)
+    input:
+      | SlashSubcommandGroupCreatorInterface
+      | ((subcommandGroup: SlashSubcommandGroupCreatorInterface) => SlashSubcommandGroupCreatorInterface)
   ): SlashCommandSubcommandsOnlyCreator;
 
   create(): SlashCommand;
@@ -34,8 +44,7 @@ export interface SlashCommandSubcommandsOnlyCreator
   extends SharedNameAndDescription,
     SharedSlashCommand,
     Omit<SharedSlashCommandCreator, 'handleInteraction' | 'handleAutocompleteInteraction'>,
-    ForGuilds,
-    Omit<SharedSlashCommandSubcommands<SlashCommandSubcommandsOnlyCreator>, 'addSubcommand' | 'addSubcommandGroup'> {}
+    ForGuilds {}
 
 /**
  * An interface specifically for slash command options.
@@ -51,13 +60,7 @@ export interface SlashCommandOptionsOnlyBuilder
  * Creator for Slash Commands
  */
 export class SlashCommandCreator
-  extends Mixin(
-    SharedNameAndDescription,
-    SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder>,
-    SharedSlashCommandSubcommands<SlashCommandSubcommandsOnlyCreator>,
-    SharedSlashCommand,
-    ForGuilds
-  )
+  extends Mixin(SharedNameAndDescription, SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder>, SharedSlashCommand, ForGuilds)
   implements ForGuilds
 {
   /**
@@ -109,7 +112,9 @@ export class SlashCommandCreator
    * @see {@link SlashCommandBuilder#addSubcommand}
    */
   addSubcommand(
-    input: SlashSubcommandCreator | ((subcommandGroup: SlashSubcommandCreator) => SlashSubcommandCreator)
+    input:
+      | SlashCommandSubcommandCreatorInterface
+      | ((subcommand: SlashCommandSubcommandCreatorInterface) => SlashCommandSubcommandCreatorInterface)
   ): SlashCommandSubcommandsOnlyCreator {
     if (this.handlers.autocomplete || this.handlers.slash) {
       throw new Error('Cannot use addSubcommand() when using root-level command options');
@@ -121,7 +126,7 @@ export class SlashCommandCreator
     // Get the final result
     const result = typeof input === 'function' ? input(new SlashSubcommandCreator()) : input;
 
-    SlashCommandAssertions.assertReturnOfBuilder(result, SlashSubcommandCreator);
+    SlashCommandAssertions.assertReturnOfBuilder(result, SlashCommandSubcommandBuilder);
 
     // Push it
     this.options.push(result);
@@ -129,7 +134,7 @@ export class SlashCommandCreator
     // Add the handler
     this.subHandlers.set(result.name, { slash: result.interactionHandler, autocomplete: result.autocompleteHandler });
 
-    return this;
+    return this as unknown as SlashCommandSubcommandsOnlyCreator;
   }
 
   /**
@@ -148,7 +153,7 @@ export class SlashCommandCreator
     // Get the final result
     const result = typeof input === 'function' ? input(new SlashSubcommandGroupCreator()) : input;
 
-    SlashCommandAssertions.assertReturnOfBuilder(result, SlashSubcommandGroupCreator);
+    SlashCommandAssertions.assertReturnOfBuilder(result, SlashCommandSubcommandGroupBuilder);
 
     // Push it
     this.options.push(result);
@@ -156,7 +161,7 @@ export class SlashCommandCreator
     // Add the handler
     this.subHandlers.set(result.name, result.handlers);
 
-    return this;
+    return this as unknown as SlashCommandSubcommandsOnlyCreator;
   }
 
   /**
@@ -169,3 +174,13 @@ export class SlashCommandCreator
     return new SlashCommand(this.toJSON(), this.subHandlers.size > 0 ? this.subHandlers : this.handlers, this.guilds);
   }
 }
+
+new SlashCommandCreator()
+  .setName('name')
+  .addSubcommand(subcommand =>
+    subcommand.setName('sub').addStringOption(option => option.setName('name').setDescription('description').setRequired(true))
+  )
+  .addSubcommandGroup(subcommandGroup =>
+    subcommandGroup.setName('group').addSubcommand(subcommand => subcommand.setName('sub').handleInteraction(() => {}))
+  )
+  .create();
