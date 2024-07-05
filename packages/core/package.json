@@ -41,7 +41,7 @@
     "release": "cliff-jumper"
   },
   "devDependencies": {
-    "@favware/cliff-jumper": "^2.2.3",
+    "@favware/cliff-jumper": "^4.0.2",
     "@types/deep-equal": "^1.0.4",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.9",
