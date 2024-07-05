@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.4.3](https://github.com/conductr/conductr/compare/@conductr/core@1.4.2...@conductr/core@1.4.3) - (2024-07-05)
+
+## Bug Fixes
+
+- Subcommand support fixed ([9e1c1aa](https://github.com/conductr/conductr/commit/9e1c1aab340e373b476bc13c55b8902413377ca8))
+
 # [@conductr/core@1.4.2](https://github.com/conductr/conductr/compare/@conductr/core@1.4.1...@conductr/core@1.4.2) - (2024-07-05)
 
 ## Bug Fixes
