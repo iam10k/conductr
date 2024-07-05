@@ -174,13 +174,3 @@ export class SlashCommandCreator
     return new SlashCommand(this.toJSON(), this.subHandlers.size > 0 ? this.subHandlers : this.handlers, this.guilds);
   }
 }
-
-new SlashCommandCreator()
-  .setName('name')
-  .addSubcommand(subcommand =>
-    subcommand.setName('sub').addStringOption(option => option.setName('name').setDescription('description').setRequired(true))
-  )
-  .addSubcommandGroup(subcommandGroup =>
-    subcommandGroup.setName('group').addSubcommand(subcommand => subcommand.setName('sub').handleInteraction(() => {}))
-  )
-  .create();
