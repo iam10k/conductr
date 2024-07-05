@@ -45,7 +45,7 @@ export interface SlashCommandOptionsOnlyBuilder
     SharedSlashCommand,
     Omit<SharedSlashCommandCreator, 'addSubcommand' | 'addSubcommandGroup'>,
     ForGuilds,
-    Omit<SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder>, 'handleInteraction' | 'handleAutocompleteInteraction'> {}
+    SharedSlashCommandOptions<SlashCommandOptionsOnlyBuilder> {}
 
 /**
  * Creator for Slash Commands
