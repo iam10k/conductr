@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.4.1](https://github.com/conductr/conductr/compare/@conductr/core@1.4.0...@conductr/core@1.4.1) - (2024-07-05)
+
+## Bug Fixes
+
+- Update discord-api-types to v0.37.90 ([3bdb0ee](https://github.com/conductr/conductr/commit/3bdb0ee54ec82ac67bbde94176d475d899abae49))
+
 # [@conductr/core@1.4.0](https://github.com/conductr/conductr/compare/@conductr/core@1.3.2...@conductr/core@1.4.0) - (2024-07-05)
 
 ## Features
