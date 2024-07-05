@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.4.2](https://github.com/conductr/conductr/compare/@conductr/core@1.4.1...@conductr/core@1.4.2) - (2024-07-05)
+
+## Bug Fixes
+
+- Move discord-api-types to peer dependency ([06d6950](https://github.com/conductr/conductr/commit/06d6950686ab316bb9f8c58e2c9b62c640093011))
+
 # [@conductr/core@1.4.1](https://github.com/conductr/conductr/compare/@conductr/core@1.4.0...@conductr/core@1.4.1) - (2024-07-05)
 
 ## Bug Fixes
