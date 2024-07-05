@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.3.1](https://github.com/conductr/conductr/compare/@conductr/core@1.3.1...@conductr/core@1.3.1) - (2024-07-05)
+
+## Bug Fixes
+
+- Update dependencies ([c9c32c6](https://github.com/conductr/conductr/commit/c9c32c6730f72a1e77a0cd92d61dcda4e4e0e3ee))
+- Update pnpm-lock ([2b2eb71](https://github.com/conductr/conductr/commit/2b2eb71d02ea58745b369c230e1ff411d04fbd57))
+
 # [@conductr/core@1.3.0](https://github.com/conductr/conductr/compare/@conductr/core@1.3.0...@conductr/core@1.3.0) - (2023-12-16)
 
 ## Features
