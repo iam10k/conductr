@@ -49,9 +49,6 @@ importers:
       deep-equal:
         specifier: ^2.2.3
         version: 2.2.3
-      discord-api-types:
-        specifier: ^0.37.83
-        version: 0.37.92
       eventemitter3:
         specifier: ^5.0.1
         version: 5.0.1
@@ -80,6 +77,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^7.15.0
         version: 7.15.0(eslint@8.57.0)(typescript@5.5.3)
+      discord-api-types:
+        specifier: ^0.37.83
+        version: 0.37.83
       eslint:
         specifier: ^8.56.0
         version: 8.57.0
@@ -1515,9 +1515,6 @@ packages:
 
   discord-api-types@0.37.83:
     resolution: { integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA== }
-
-  discord-api-types@0.37.92:
-    resolution: { integrity: sha512-7xnedbQRLRef/O+4jKPyIFwl6YqoyihOG3OSneiRmVJMBk30ph2YuZGcHjeX1Kk/a3yQWeyCKe4RZJB3iECcxg== }
 
   doctrine@3.0.0:
     resolution: { integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w== }
@@ -4980,8 +4977,6 @@ snapshots:
       path-type: 4.0.0
 
   discord-api-types@0.37.83: {}
-
-  discord-api-types@0.37.92: {}
 
   doctrine@3.0.0:
     dependencies:

@@ -3,7 +3,6 @@ import {
   SharedSlashCommand,
   SharedSlashCommandOptions,
   SlashCommandAssertions,
-  SlashCommandSubcommandBuilder,
   SlashCommandSubcommandGroupBuilder
 } from '@discordjs/builders';
 import { ForGuilds } from '../../mixins';
@@ -126,7 +125,7 @@ export class SlashCommandCreator
     // Get the final result
     const result = typeof input === 'function' ? input(new SlashSubcommandCreator()) : input;
 
-    SlashCommandAssertions.assertReturnOfBuilder(result, SlashCommandSubcommandBuilder);
+    SlashCommandAssertions.assertReturnOfBuilder(result, SlashSubcommandCreator);
 
     // Push it
     this.options.push(result);
