@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.4.4](https://github.com/conductr/conductr/compare/@conductr/core@1.4.3...@conductr/core@1.4.4) - (2024-07-06)
+
+## Bug Fixes
+
+- Corrected the code after all the breaking ([acd8bcb](https://github.com/conductr/conductr/commit/acd8bcbb0d19a6c57f8c25201bfa9eec222b020e))
+- Remove test code ([30c7352](https://github.com/conductr/conductr/commit/30c735204f3f1ba9bbfe093801de8067e08afba7))
+
 # [@conductr/core@1.4.3](https://github.com/conductr/conductr/compare/@conductr/core@1.4.2...@conductr/core@1.4.3) - (2024-07-05)
 
 ## Bug Fixes
