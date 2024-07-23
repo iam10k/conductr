@@ -55,7 +55,7 @@
     "prettier": "^3.3.2",
     "ts-jest": "^29.2.3",
     "tsup": "^8.2.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "dependencies": {
     "@discordjs/builders": "^1.8.2",
