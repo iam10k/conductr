@@ -39,7 +39,7 @@
     "@favware/npm-deprecate": "^1.0.7",
     "@swc/core": "^1.7.2",
     "git-cliff": "^1.4.0",
-    "husky": "^9.1.2",
+    "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "tsup": "^8.2.3",
