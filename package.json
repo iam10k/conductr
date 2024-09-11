@@ -37,7 +37,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-angular": "^19.4.1",
     "@favware/npm-deprecate": "^1.0.7",
-    "@swc/core": "^1.7.24",
+    "@swc/core": "^1.7.26",
     "git-cliff": "^1.4.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
