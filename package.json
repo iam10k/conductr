@@ -35,7 +35,7 @@
   ],
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
-    "@commitlint/config-angular": "^19.5.0",
+    "@commitlint/config-angular": "^19.6.0",
     "@favware/npm-deprecate": "^1.0.7",
     "@swc/core": "^1.9.2",
     "git-cliff": "^1.4.0",
