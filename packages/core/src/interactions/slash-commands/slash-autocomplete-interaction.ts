@@ -1,4 +1,4 @@
-import { APIApplicationCommandAutocompleteInteraction, APIApplicationCommandInteractionDataBasicOption } from 'discord-api-types/v10';
+import { APIApplicationCommandAutocompleteInteraction, APIApplicationCommandInteractionDataBasicOption } from '@discordjs/core';
 import { OptionsResolvers, SlashInteraction } from './slash-interaction';
 
 export interface AutocompleteOptionsResolvers {

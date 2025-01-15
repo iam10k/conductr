@@ -1,4 +1,4 @@
-import { Snowflake } from 'discord-api-types/v10';
+import { Snowflake } from '@discordjs/core';
 
 /**
  * This mixin adds the ability to set the guilds where this command is available

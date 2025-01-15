@@ -1,4 +1,4 @@
-import { APIMessageComponentInteraction, ComponentType, Snowflake } from 'discord-api-types/v10';
+import { APIMessageComponentInteraction, ComponentType, Snowflake } from '@discordjs/core';
 import { Mixin } from 'ts-mixer';
 import { CustomId, Guilds } from '../../mixins';
 import { Component } from '../component';

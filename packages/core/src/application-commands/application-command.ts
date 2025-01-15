@@ -1,4 +1,4 @@
-import { ApplicationCommandType, RESTPostAPIApplicationCommandsJSONBody, Snowflake } from 'discord-api-types/v10';
+import { ApplicationCommandType, RESTPostAPIApplicationCommandsJSONBody, Snowflake } from '@discordjs/core';
 import { ContextMenu } from './context-menus';
 import { SlashCommand } from './slash-commands';
 

@@ -1,4 +1,4 @@
-import { APIModalSubmitInteraction, ModalSubmitActionRowComponent, ModalSubmitComponent } from 'discord-api-types/v10';
+import { APIModalSubmitInteraction, ModalSubmitActionRowComponent, ModalSubmitComponent } from '@discordjs/core';
 
 export interface ModalSubmitResolvers {
   /**

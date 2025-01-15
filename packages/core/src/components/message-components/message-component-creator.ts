@@ -4,7 +4,7 @@ import {
   APIMessageComponentInteraction,
   ComponentType,
   InteractionType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import { Mixin } from 'ts-mixer';
 import { ForGuilds, SetCustomId } from '../../mixins';
 import { MessageComponentHandler } from './message-component-handler';

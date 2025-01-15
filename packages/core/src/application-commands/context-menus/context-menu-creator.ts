@@ -1,5 +1,5 @@
 import { ContextMenuCommandBuilder, ContextMenuCommandType } from '@discordjs/builders';
-import { APIContextMenuInteraction } from 'discord-api-types/v10';
+import { APIContextMenuInteraction } from '@discordjs/core';
 import { Mixin } from 'ts-mixer';
 import { ContextMenuResolvers } from '../../interactions';
 import { ForGuilds } from '../../mixins';

@@ -6,7 +6,7 @@ import {
   APIUser,
   APIUserApplicationCommandInteraction,
   ApplicationCommandType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 
 export interface ContextMenuResolvers {
   getTargetId(): string;

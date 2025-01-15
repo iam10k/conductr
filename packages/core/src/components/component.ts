@@ -1,4 +1,4 @@
-import { Snowflake } from 'discord-api-types/v10';
+import { Snowflake } from '@discordjs/core';
 import { MessageComponent } from './message-components';
 import { Modal } from './modals';
 

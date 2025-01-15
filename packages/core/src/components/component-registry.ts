@@ -1,4 +1,4 @@
-import { APIMessageComponentInteraction, APIModalSubmitInteraction, ComponentType, Snowflake } from 'discord-api-types/v10';
+import { APIMessageComponentInteraction, APIModalSubmitInteraction, ComponentType, Snowflake } from '@discordjs/core';
 import { Conductr } from '../conductr';
 import { Component } from './component';
 import { ModalSubmitInteraction } from '../interactions';

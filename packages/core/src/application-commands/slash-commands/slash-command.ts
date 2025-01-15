@@ -1,4 +1,4 @@
-import { ApplicationCommandType, RESTPostAPIChatInputApplicationCommandsJSONBody, Snowflake } from 'discord-api-types/v10';
+import { ApplicationCommandType, RESTPostAPIChatInputApplicationCommandsJSONBody, Snowflake } from '@discordjs/core';
 import { mix, Mixin } from 'ts-mixer';
 import { Guilds } from '../../mixins';
 import { ApplicationCommand } from '../application-command';

@@ -1,4 +1,4 @@
-import { APIMessageComponentInteraction } from 'discord-api-types/v10';
+import { APIMessageComponentInteraction } from '@discordjs/core';
 
 export type MessageComponentHandler<IType extends APIMessageComponentInteraction = APIMessageComponentInteraction> = (
   interaction: IType
