@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.5.0](https://github.com/conductr/conductr/compare/@conductr/core@1.4.4...@conductr/core@1.5.0) - (2025-01-15)
+
+## Features
+
+- Replace discord-api-types with @discordjs/core peer-dependency ([220a9be](https://github.com/conductr/conductr/commit/220a9bebc9959f5f5f403d9e83de1a13c5d769e9))
+
+# Changelog
+All notable changes to this project will be documented in this file.
+
 # [@conductr/core@1.4.4](https://github.com/conductr/conductr/compare/@conductr/core@1.4.3...@conductr/core@1.4.4) - (2024-07-06)
 
 ## Bug Fixes
