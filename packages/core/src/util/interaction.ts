@@ -2,7 +2,7 @@ import {
   APIApplicationCommandAutocompleteInteraction,
   APIChatInputApplicationCommandInteraction,
   ApplicationCommandOptionType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 
 export function getCommandNames(
   interaction: APIChatInputApplicationCommandInteraction | APIApplicationCommandAutocompleteInteraction

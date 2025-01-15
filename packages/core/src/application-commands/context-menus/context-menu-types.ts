@@ -1,8 +1,4 @@
-import {
-  APIMessageApplicationCommandInteraction,
-  APIUserApplicationCommandInteraction,
-  ApplicationCommandType
-} from 'discord-api-types/v10';
+import { APIMessageApplicationCommandInteraction, APIUserApplicationCommandInteraction, ApplicationCommandType } from '@discordjs/core';
 import { MessageContextMenuResolvers, UserContextMenuResolvers } from '../../interactions';
 import { ContextMenuCreator } from './context-menu-creator';
 
@@ -11,14 +7,14 @@ import { ContextMenuCreator } from './context-menu-creator';
  */
 export class UserContextMenuCreator extends ContextMenuCreator<APIUserApplicationCommandInteraction, UserContextMenuResolvers> {
   constructor() {
-    super(ApplicationCommandType.User);
+    super(ApplicationCommandType.User as any);
   }
 
   override setType(type: ApplicationCommandType): this {
     if (type !== ApplicationCommandType.User) {
       throw new Error('Cannot set a user context menu to a different type');
     }
-    return super.setType(type);
+    return super.setType(type as any);
   }
 }
 
@@ -27,13 +23,13 @@ export class UserContextMenuCreator extends ContextMenuCreator<APIUserApplicatio
  */
 export class MessageContextMenuCreator extends ContextMenuCreator<APIMessageApplicationCommandInteraction, MessageContextMenuResolvers> {
   constructor() {
-    super(ApplicationCommandType.Message);
+    super(ApplicationCommandType.Message as any);
   }
 
   override setType(type: ApplicationCommandType): this {
     if (type !== ApplicationCommandType.Message) {
       throw new Error('Cannot set a message context menu to a different type');
     }
-    return super.setType(type);
+    return super.setType(type as any);
   }
 }

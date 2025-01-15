@@ -1,4 +1,4 @@
-import { APIContextMenuInteraction } from 'discord-api-types/v10';
+import { APIContextMenuInteraction } from '@discordjs/core';
 import { ContextMenuResolvers } from '../../interactions';
 
 export type ContextMenuHandler<

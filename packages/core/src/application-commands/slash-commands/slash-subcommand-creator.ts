@@ -12,7 +12,7 @@ import {
   ApplicationCommandOptionType,
   type APIApplicationCommandSubcommandGroupOption,
   type APIApplicationCommandSubcommandOption
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 
 export interface SharedSlashCommandSubcommandCreator {
   readonly interactionHandler: SlashCommandHandler | null;

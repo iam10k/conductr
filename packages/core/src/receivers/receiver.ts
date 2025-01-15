@@ -1,4 +1,4 @@
-import { APIInteraction } from 'discord-api-types/v10';
+import { APIInteraction } from '@discordjs/core';
 
 /**
  * The Receiver interface for Conductr to use.

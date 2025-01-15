@@ -6,7 +6,7 @@ import {
   APIMessageStringSelectInteractionData,
   APIMessageUserSelectInteractionData,
   ComponentType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import { MessageComponentCreator } from './message-component-creator';
 
 /**

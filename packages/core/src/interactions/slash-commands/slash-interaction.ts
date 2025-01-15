@@ -19,7 +19,7 @@ import {
   APIUser,
   ApplicationCommandOptionType,
   ChannelType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import { MemberUser } from '../../api-types';
 
 export interface OptionsResolvers {

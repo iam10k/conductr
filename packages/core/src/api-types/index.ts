@@ -1,4 +1,4 @@
-import { APIInteractionDataResolvedGuildMember, APIUser } from 'discord-api-types/v10';
+import { APIInteractionDataResolvedGuildMember, APIUser } from '@discordjs/core';
 
 /**
  * Convenience type for a command option of guild member and user type

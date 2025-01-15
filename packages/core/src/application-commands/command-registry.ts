@@ -7,7 +7,7 @@ import {
   RESTPostAPIApplicationCommandsJSONBody,
   Routes,
   Snowflake
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import { Conductr } from '../conductr';
 import { AutocompleteInteraction, ContextMenuInteraction, SlashInteraction } from '../interactions';
 import { getCommandNames } from '../util';

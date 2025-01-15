@@ -8,7 +8,7 @@ import {
   APIModalSubmitInteraction,
   ApplicationCommandType,
   InteractionType
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import EventEmitter from 'eventemitter3';
 import 'reflect-metadata';
 import { ApplicationCommand, CommandRegistry, ContextMenu, SlashCommand, SyncOptions } from './application-commands';

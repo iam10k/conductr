@@ -2,7 +2,7 @@ import {
   APIApplicationCommandAutocompleteInteraction,
   APIApplicationCommandOptionChoice,
   APIChatInputApplicationCommandInteraction
-} from 'discord-api-types/v10';
+} from '@discordjs/core';
 import { AutocompleteInteraction, SlashInteraction } from '../../interactions';
 
 export type SlashCommandHandler = (
