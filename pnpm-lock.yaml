@@ -12,8 +12,8 @@ importers:
         specifier: ^19.7.1
         version: 19.7.1(@types/node@22.13.0)(typescript@5.7.3)
       '@commitlint/config-angular':
-        specifier: ^19.6.0
-        version: 19.7.0
+        specifier: ^19.8.0
+        version: 19.8.0
       '@favware/npm-deprecate':
         specifier: ^1.0.7
         version: 1.0.7(encoding@0.1.13)
@@ -292,12 +292,12 @@ packages:
     engines: {node: '>=v18'}
     hasBin: true
 
-  '@commitlint/config-angular-type-enum@19.5.0':
-    resolution: {integrity: sha512-4/6xrkElCSBb7+6oZXlBJ/zytkxXgmTg5gk1Voj3GAWShTivtWrPtDYvHmF858WhA695YKgxMHEPNN74UFkK8w==}
+  '@commitlint/config-angular-type-enum@19.8.0':
+    resolution: {integrity: sha512-CAFHGAgUeOGNuU5DSX1ALXvJio82NZUGPPNFFDZU7BDf6q/A2U8vT1sjZQ56JTuFBpqTRF5Qk3IfSwmp0/zsCA==}
     engines: {node: '>=v18'}
 
-  '@commitlint/config-angular@19.7.0':
-    resolution: {integrity: sha512-xXBplZDC3yjnE1knGvO9ETqpxRhW0xZ/ud7KHPXGtvbcpmLX/tUIsbCmZcNvM9cZYMnYqAvhrQMEqCsjlkOA7A==}
+  '@commitlint/config-angular@19.8.0':
+    resolution: {integrity: sha512-YVXDVUbmtsA9pv6QaRp+riQJd22zv4qvQ6Yjy5GB+pRClncX9PPNOhzPMITPyquF05QX6hC9me6ADrvrSzQ1xw==}
     engines: {node: '>=v18'}
 
   '@commitlint/config-validator@19.5.0':
@@ -1135,8 +1135,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  acorn@8.14.0:
-    resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
+  acorn@8.14.1:
+    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -3685,11 +3685,11 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/config-angular-type-enum@19.5.0': {}
+  '@commitlint/config-angular-type-enum@19.8.0': {}
 
-  '@commitlint/config-angular@19.7.0':
+  '@commitlint/config-angular@19.8.0':
     dependencies:
-      '@commitlint/config-angular-type-enum': 19.5.0
+      '@commitlint/config-angular-type-enum': 19.8.0
 
   '@commitlint/config-validator@19.5.0':
     dependencies:
@@ -4601,12 +4601,12 @@ snapshots:
 
   acorn-walk@8.3.4:
     dependencies:
-      acorn: 8.14.0
+      acorn: 8.14.1
     optional: true
 
   acorn@8.12.1: {}
 
-  acorn@8.14.0:
+  acorn@8.14.1:
     optional: true
 
   agent-base@6.0.2:
@@ -6874,7 +6874,7 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 20.14.12
-      acorn: 8.14.0
+      acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
       create-require: 1.1.1
