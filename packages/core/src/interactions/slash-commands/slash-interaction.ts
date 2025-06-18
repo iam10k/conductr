@@ -220,7 +220,7 @@ export class SlashInteraction implements OptionsResolvers {
     ) as APIApplicationCommandInteractionDataMentionableOption;
     return !option?.value
       ? null
-      : this.resolved?.members[option.value] ?? this.resolved?.users[option.value] ?? this.resolved?.roles[option.value] ?? null;
+      : (this.resolved?.members[option.value] ?? this.resolved?.users[option.value] ?? this.resolved?.roles[option.value] ?? null);
   }
 
   /**
@@ -235,7 +235,7 @@ export class SlashInteraction implements OptionsResolvers {
       [ApplicationCommandOptionType.User, ApplicationCommandOptionType.Mentionable],
       false
     ) as APIApplicationCommandInteractionDataUserOption;
-    return !option?.value ? null : this.resolved?.members[option.value] ?? null;
+    return !option?.value ? null : (this.resolved?.members[option.value] ?? null);
   }
 
   /**
@@ -250,7 +250,7 @@ export class SlashInteraction implements OptionsResolvers {
       [ApplicationCommandOptionType.User, ApplicationCommandOptionType.Mentionable],
       required
     ) as APIApplicationCommandInteractionDataUserOption;
-    return !option?.value ? null : this.resolved?.users[option.value] ?? null;
+    return !option?.value ? null : (this.resolved?.users[option.value] ?? null);
   }
 
   /**
@@ -277,7 +277,7 @@ export class SlashInteraction implements OptionsResolvers {
       [ApplicationCommandOptionType.Role, ApplicationCommandOptionType.Mentionable],
       required
     ) as APIApplicationCommandInteractionDataRoleOption;
-    return !option?.value ? null : this.resolved?.roles[option.value] ?? null;
+    return !option?.value ? null : (this.resolved?.roles[option.value] ?? null);
   }
 
   /**
@@ -294,7 +294,7 @@ export class SlashInteraction implements OptionsResolvers {
       [ApplicationCommandOptionType.Channel],
       required
     ) as APIApplicationCommandInteractionDataChannelOption;
-    const channel = !option?.value ? null : this.resolved?.channels[option.value] ?? null;
+    const channel = !option?.value ? null : (this.resolved?.channels[option.value] ?? null);
 
     if (channel && channelTypes.length > 0 && !channelTypes.includes(channel.type)) {
       throw new Error(`Option Invalid ChannelType: ${name}, ${channel.type}, ${channelTypes.join(', ')}`);
@@ -315,6 +315,6 @@ export class SlashInteraction implements OptionsResolvers {
       [ApplicationCommandOptionType.Attachment],
       required
     ) as APIApplicationCommandInteractionDataAttachmentOption;
-    return !option?.value ? null : this.resolved?.attachments[option.value] ?? null;
+    return !option?.value ? null : (this.resolved?.attachments[option.value] ?? null);
   }
 }
