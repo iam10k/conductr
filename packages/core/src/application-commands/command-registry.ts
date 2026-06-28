@@ -4,6 +4,7 @@ import {
   APIChatInputApplicationCommandInteraction,
   APIContextMenuInteraction,
   ApplicationCommandType,
+  InteractionResponseType,
   RESTPostAPIApplicationCommandsJSONBody,
   Routes,
   Snowflake
@@ -243,7 +244,25 @@ export class CommandRegistry {
 
     this.conductr.emit('commandAutocompleteInteraction', interaction, command);
 
-    handlers.autocomplete(interaction, new AutocompleteInteraction(interaction));
+    const choices = await handlers.autocomplete(interaction, new AutocompleteInteraction(interaction));
+
+    // A handler may respond to the interaction itself by returning undefined.
+    if (choices === undefined) {
+      return;
+    }
+
+    if (!this.rest) {
+      throw new Error('Cannot respond to an autocomplete interaction without a rest client.');
+    }
+
+    // Send the choices back to Discord. Without this the suggestions never reach the client.
+    await this.rest.post(Routes.interactionCallback(interaction.id, interaction.token), {
+      body: {
+        type: InteractionResponseType.ApplicationCommandAutocompleteResult,
+        data: { choices }
+      },
+      auth: false
+    });
   }
 
   async processContextMenu(interaction: APIContextMenuInteraction): Promise<void> {
