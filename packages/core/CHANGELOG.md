@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+# [@conductr/core@1.8.0](https://github.com/conductr/conductr/compare/@conductr/core@1.7.0...@conductr/core@1.8.0) - (2026-06-29)
+
+## Features
+
+- Add/fix automplete support (#851) ([8377a24](https://github.com/conductr/conductr/commit/8377a24d79574445f747190c3b27d93a73706013))
+
+# [unreleased]
+
+## Features
+
+- Add/fix automplete support (#851) ([8377a24](https://github.com/conductr/conductr/commit/8377a24d79574445f747190c3b27d93a73706013))
+
+# Changelog
+All notable changes to this project will be documented in this file.
+
 # [@conductr/core@1.7.0](https://github.com/conductr/conductr/compare/@conductr/core@1.5.0...@conductr/core@1.7.0) - (2025-06-18)
 
 ## Features
